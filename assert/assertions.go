@@ -104,9 +104,9 @@ func Fail(t TestingT, failureMessage string, msgAndArgs ...interface{}) bool {
 	message := messageFromMsgAndArgs(msgAndArgs...)
 
 	if len(message) > 0 {
-		t.Errorf("\r%s\r\tLocation:\t%s\n\r\tError:\t\t%s\n\r\tMessages:\t%s\n\r", getWhitespaceString(), CallerInfo(), failureMessage, message)
+		t.Fatalf("\r%s\r\tLocation:\t%s\n\r\tError:\t\t%s\n\r\tMessages:\t%s\n\r", getWhitespaceString(), CallerInfo(), failureMessage, message)
 	} else {
-		t.Errorf("\r%s\r\tLocation:\t%s\n\r\tError:\t\t%s\n\r", getWhitespaceString(), CallerInfo(), failureMessage)
+		t.Fatalf("\r%s\r\tLocation:\t%s\n\r\tError:\t\t%s\n\r", getWhitespaceString(), CallerInfo(), failureMessage)
 	}
 
 	return false
