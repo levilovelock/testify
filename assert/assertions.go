@@ -10,7 +10,7 @@ import (
 
 // TestingT is an interface wrapper around *testing.T
 type TestingT interface {
-	Errorf(format string, args ...interface{})
+	Fatalf(format string, args ...interface{})
 }
 
 // Comparison a custom function that returns true on success and false on failure
